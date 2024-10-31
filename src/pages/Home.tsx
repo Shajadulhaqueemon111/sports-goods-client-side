@@ -1,7 +1,11 @@
+import Banner from "../components/layouts/Banner";
+import Products from "../components/layouts/products";
+
 const Home = () => {
   return (
     <div>
-      <h1>This is home page</h1>
+      <Banner></Banner>
+      <Products></Products>
     </div>
   );
 };

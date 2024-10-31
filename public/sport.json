@@ -1,0 +1,209 @@
+[
+  {
+    "id": 1,
+    "name": "Soccer Ball",
+    "category": "Sports Equipment",
+    "stockQuantity": 50,
+    "brand": "Adidas",
+    "rating": 4.7,
+    "description": "High-quality soccer ball designed for professional gameplay, with durable stitching and excellent grip.",
+    "price": 29.99,
+    "image": "https://i.ibb.co.com/dDMqcC7/golden-soccer-ball-3y-LR9z1-600.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Basketball Shoes",
+    "category": "Footwear",
+    "stockQuantity": 20,
+    "brand": "Nike",
+    "rating": 4.8,
+    "description": "Comfortable and supportive basketball shoes designed for agility and speed on the court.",
+    "price": 119.99,
+    "image": "https://i.ibb.co.com/5Lz2Vp8/istockphoto-153366544-612x612.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Yoga Mat",
+    "category": "Fitness Equipment",
+    "stockQuantity": 75,
+    "brand": "Liforme",
+    "rating": 4.6,
+    "description": "Eco-friendly, non-slip yoga mat offering great grip and cushioning for all types of yoga.",
+    "price": 69.99,
+    "image": "https://i.ibb.co.com/qnDP3St/istockphoto-149027826-612x612.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Tennis Racket",
+    "category": "Rackets",
+    "stockQuantity": 30,
+    "brand": "Wilson",
+    "rating": 4.5,
+    "description": "Lightweight and durable tennis racket with a large sweet spot for enhanced control and power.",
+    "price": 89.99,
+    "image": "https://i.ibb.co.com/FD70ZB7/Tennis-Racket-and-Balls.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Professional Volleyball",
+    "category": "Sports Equipment",
+    "stockQuantity": 60,
+    "brand": "Mikasa",
+    "rating": 4.8,
+    "description": "Durable and soft-touch volleyball designed for indoor and outdoor gameplay, offering optimal control and accuracy.",
+    "price": 34.99,
+    "image": "https://i.ibb.co.com/2vKBPvR/istockphoto-618341990-612x612.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Boxing Gloves",
+    "category": "Protective Gear",
+    "stockQuantity": 40,
+    "brand": "Everlast",
+    "rating": 4.7,
+    "description": "Premium boxing gloves with multi-layer foam padding for maximum protection and comfort.",
+    "price": 39.99,
+    "image": "https://i.ibb.co.com/FVy4KBK/istockphoto-495254914-612x612.jpg"
+  },
+
+  {
+    "id": "1",
+    "sportroduct": {
+      "name": "Soccer Ball",
+      "sportCategory": "Soccer",
+      "price": "25.00",
+      "brand": "Nike",
+      "rating": "4.5",
+      "features": "Durable, Water-resistant",
+      "availabity": "In Stock",
+      "image": "https://i.ibb.co.com/dDMqcC7/golden-soccer-ball-3y-LR9z1-600.jpg"
+    },
+    "isDeleted": false
+  },
+  {
+    "id": "2",
+    "sportroduct": {
+      "name": "Basketball",
+      "sportCategory": "Basketball",
+      "price": "30.00",
+      "brand": "Spalding",
+      "rating": "4.7",
+      "features": "Official size, Indoor/Outdoor use",
+      "availabity": "In Stock",
+      "image": "https://i.ibb.co.com/qpDpkqx/basketball-game-concept-23-2150910692.jpg"
+    },
+    "isDeleted": false
+  },
+  {
+    "id": "3",
+    "sportroduct": {
+      "name": "Tennis Racket",
+      "sportCategory": "Tennis",
+      "price": "120.00",
+      "brand": "Wilson",
+      "rating": "4.6",
+      "features": "Lightweight, High tension",
+      "availabity": "Limited Stock",
+      "image": "https://i.ibb.co.com/FD70ZB7/Tennis-Racket-and-Balls.jpg"
+    },
+    "isDeleted": false
+  },
+  {
+    "id": "4",
+    "sportroduct": {
+      "name": "Running Shoes",
+      "sportCategory": "Running",
+      "price": "90.00",
+      "brand": "Adidas",
+      "rating": "4.4",
+      "features": "Breathable, Cushioned sole",
+      "availabity": "In Stock",
+      "image": "https://i.ibb.co.com/n12kZz6/1x-1.webp"
+    },
+    "isDeleted": false
+  },
+  {
+    "id": "5",
+    "sportroduct": {
+      "name": "Yoga Mat",
+      "sportCategory": "Yoga",
+      "price": "20.00",
+      "brand": "Liforme",
+      "rating": "4.8",
+      "features": "Non-slip, Eco-friendly",
+      "availabity": "In Stock",
+      "image": "https://i.ibb.co.com/qnDP3St/istockphoto-149027826-612x612.jpg"
+    },
+    "isDeleted": false
+  },
+  {
+    "id": "6",
+    "sportroduct": {
+      "name": "Dumbbell Set",
+      "sportCategory": "Gym",
+      "price": "50.00",
+      "brand": "Bowflex",
+      "rating": "4.9",
+      "features": "Adjustable weight, Durable",
+      "availabity": "In Stock",
+      "image": "https://i.ibb.co.com/yYR4Gq2/31-El-Bgr4f-YL-AC-UF894-1000-QL80.jpg"
+    },
+    "isDeleted": false
+  },
+  {
+    "id": "7",
+    "sportroduct": {
+      "name": "Cycling Helmet",
+      "sportCategory": "Cycling",
+      "price": "45.00",
+      "brand": "Giro",
+      "rating": "4.3",
+      "features": "Lightweight, Adjustable fit",
+      "availabity": "In Stock",
+      "image": "https://i.ibb.co.com/NTrK0By/istockphoto-95049336-612x612.jpg"
+    },
+    "isDeleted": false
+  },
+  {
+    "id": "8",
+    "sportroduct": {
+      "name": "Baseball Glove",
+      "sportCategory": "Baseball",
+      "price": "60.00",
+      "brand": "Rawlings",
+      "rating": "4.5",
+      "features": "Leather, Durable stitching",
+      "availabity": "In Stock",
+      "image": "https://i.ibb.co.com/Qns2Ydw/360-F-537916849-Mzbo2c6-Er-Kd-Qr9-Udb9q-Jwz6sz-U8-UW9k-L.jpg"
+    },
+    "isDeleted": false
+  },
+  {
+    "id": "9",
+    "sportroduct": {
+      "name": "Hiking Backpack",
+      "sportCategory": "Hiking",
+      "price": "70.00",
+      "brand": "Osprey",
+      "rating": "4.6",
+      "features": "Water-resistant, Multiple compartments",
+      "availabity": "Limited Stock",
+      "image": "https://i.ibb.co.com/yprLQV7/360-F-625641250-f8-Icbd41x-F0-Pr-Isox-PNf-Rg-FVu-Ed1zbs-J.jpg"
+    },
+    "isDeleted": false
+  },
+  {
+    "id": "10",
+    "sportroduct": {
+      "name": "Swimming Goggles",
+      "sportCategory": "Swimming",
+      "price": "15.00",
+      "brand": "Speedo",
+      "rating": "4.2",
+      "features": "Anti-fog, UV protection",
+      "availabity": "In Stock",
+      "image": "https://i.ibb.co.com/j4cMzT4/71i-Vxdvwvk-L-AC-UF350-350-QL80.jpg"
+    },
+    "isDeleted": false
+  }
+]

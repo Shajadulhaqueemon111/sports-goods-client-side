@@ -2,17 +2,18 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const baseApi = createApi({
   reducerPath: "baseApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://localhost:3000/api/v1",
+    baseUrl: "http://localhost:5000/api/v1/single",
   }),
   tagTypes: ["products", "verify"],
   endpoints: (builder) => ({
     getProducts: builder.query({
       query: () => ({
         method: "GET",
-        url: "/product",
+        url: "/get-product",
       }),
       providesTags: ["products"],
     }),
+
     creteOrder: builder.mutation({
       query: (data) => {
         return {
