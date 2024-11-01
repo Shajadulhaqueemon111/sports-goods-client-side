@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from "react";
 import Modal from "./Modal";
 import { useDispatch } from "react-redux";
@@ -5,25 +6,26 @@ import { addToCart } from "../../redux/fetaure/cartSlice";
 import { Link } from "react-router-dom";
 
 // Define the Product type
-interface Product {
-  _id: string;
-  name: string;
-  description: string;
-  price: string;
-  image: string;
-  category: string;
-  brand: string;
-  stock_quantity: string;
-}
+// interface Product {
+//   id: string;
+//   name: string;
+//   description: string;
+//   price: string;
+//   image: string;
+//   category: string;
+//   brand: string;
+//   stock_quantity: string;
+// }
 
-const ProductCard = ({ product }: { product: Product }) => {
-  console.log(product); // Check data
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const ProductCard = ({ product }: { product: any }) => {
+  // console.log(product); // Check data
 
   const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(false);
-  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [selectedProduct, setSelectedProduct] = useState<any>(null);
 
-  const handleShowModal = (product: Product) => {
+  const handleShowModal = (product: any) => {
     setSelectedProduct(product);
     setShowModal(true);
   };
@@ -33,7 +35,7 @@ const ProductCard = ({ product }: { product: Product }) => {
     setShowModal(false);
   };
 
-  const handleAddToCart = (product: Product) => {
+  const handleAddToCart = (product: any) => {
     dispatch(addToCart(product));
   };
 
@@ -62,7 +64,7 @@ const ProductCard = ({ product }: { product: Product }) => {
           </h3>
           <p className="text-gray-300 mb-4 flex-grow">{product.description}</p>
           <p className="text-lg font-bold text-white mb-4">${product.price}</p>
-          <Link to={`/view-details/${product._id}`}>
+          <Link to={`/view-details/${product.id}`}>
             <button className="bg-white text-black font-semibold py-2 px-4 rounded-lg hover:bg-gray-800 hover:text-white transition duration-300 shadow-md hover:shadow-lg">
               View-Details
             </button>

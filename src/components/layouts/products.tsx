@@ -10,9 +10,14 @@ const Products = () => {
     <div className="container">
       <h1 className="text-2xl text-center font-bold my-10">All Products</h1>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10">
-        {data?.data.map((product: any) => (
-          <ProductCard key={product._id} product={product.single_product} />
-        ))}
+        {data?.data.map((product: any) => {
+          const flatProduct = {
+            ...product.single_product,
+            id: product.id,
+            _id: product._id,
+          };
+          return <ProductCard key={flatProduct.id} product={flatProduct} />;
+        })}
       </div>
     </div>
   );

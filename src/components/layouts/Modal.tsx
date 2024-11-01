@@ -2,6 +2,7 @@
 import { ShoppingCart } from "lucide-react";
 import Rating from "./Rating";
 
+
 const Modal = ({ product, onClose, handleAddToCart }: any) => {
   return (
     <div className="fixed top-0 left-0 w-screen h-screen z-50 bg-black/60 backdrop-blur-sm">

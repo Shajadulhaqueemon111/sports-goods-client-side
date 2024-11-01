@@ -1,7 +1,10 @@
 import { Link, NavLink } from "react-router-dom";
 
 import { TiShoppingCart } from "react-icons/ti";
+import { useAppSelector } from "../../redux/fetaure/hooks";
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const Navbar = () => {
+  const products = useAppSelector((store) => store.cart.products);
   const navLink = (
     <>
       <li>
@@ -20,7 +23,7 @@ const Navbar = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink className=" font-bold" to="/aboute">
+        <NavLink className=" font-bold" to="/aboute-us">
           Aboute Us
         </NavLink>
       </li>
@@ -28,7 +31,7 @@ const Navbar = () => {
   );
   return (
     <div>
-      <div className="navbar fixed z-10 max-w-screen-xl  bg-opacity-30 bg-black text-sky-400">
+      <div className="navbar z-10 max-w-screen-xl  bg-opacity-30 bg-black text-sky-400">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -68,7 +71,7 @@ const Navbar = () => {
               <TiShoppingCart size={26} />
             </Link>
             <span className="rounded-full absolute top-[-10px] left-[20px] bg-white text-black text-center w-[20px] h-[20px] flex items-center justify-center">
-              {/* {products.length} */}0
+              {products.length}
             </span>
           </li>
         </div>
