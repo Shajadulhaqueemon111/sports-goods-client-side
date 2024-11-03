@@ -7,9 +7,9 @@ const Products = () => {
   const { data } = useGetProductsQuery({});
   console.log(data);
   return (
-    <div className="container">
+    <div className="">
       <h1 className="text-2xl text-center font-bold my-10">All Products</h1>
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 text-center  mx-auto gap-10">
         {data?.data.map((product: any) => {
           const flatProduct = {
             ...product.single_product,

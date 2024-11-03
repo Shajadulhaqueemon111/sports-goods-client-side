@@ -7,6 +7,8 @@ import ProductDetails from "../components/layouts/ProductDetails";
 import Cart from "../pages/Cart";
 import CheckOutPage from "../pages/CheckOut";
 import Aboute from "../components/layouts/Aboute";
+import AllProduct from "../components/layouts/AllProduct";
+import ManageProduct from "../components/layouts/ManageProduct";
 
 const router = createBrowserRouter([
   {
@@ -19,7 +21,7 @@ const router = createBrowserRouter([
         element: <Home></Home>,
       },
       {
-        path: "/view-details/:id",
+        path: "/view-details/:_id",
         element: <ProductDetails></ProductDetails>,
       },
       {
@@ -31,8 +33,16 @@ const router = createBrowserRouter([
         element: <CheckOutPage></CheckOutPage>,
       },
       {
+        path: "/all-product",
+        element: <AllProduct></AllProduct>,
+      },
+      {
         path: "/aboute-us",
         element: <Aboute></Aboute>,
+      },
+      {
+        path: "/manage-product",
+        element: <ManageProduct></ManageProduct>,
       },
     ],
   },

@@ -10,13 +10,13 @@ import { useParams } from "react-router-dom";
 import toast from "react-hot-toast";
 
 const ProductDetails = () => {
-  const { id } = useParams<{ id: string }>();
+  const { _id } = useParams<{ _id: string }>();
   const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<any>(null);
 
   // Fetch product by ID
-  const { data, isLoading, error } = useGetProductByIdQuery(id || "");
+  const { data, isLoading, error } = useGetProductByIdQuery(_id || "");
 
   // Access the single_product data within the nested structure
   const product = data?.data?.single_product;
@@ -49,7 +49,7 @@ const ProductDetails = () => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative w-4/5 mx-auto">
       {showModal && selectedProduct && (
         <Modal
           product={selectedProduct}

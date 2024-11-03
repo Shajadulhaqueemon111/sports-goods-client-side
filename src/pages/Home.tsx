@@ -1,4 +1,6 @@
 import Banner from "../components/layouts/Banner";
+import Categories from "../components/layouts/Category";
+import ContactUS from "../components/layouts/ContactUS";
 import Products from "../components/layouts/products";
 
 const Home = () => {
@@ -6,6 +8,8 @@ const Home = () => {
     <div>
       <Banner></Banner>
       <Products></Products>
+      <Categories></Categories>
+      <ContactUS></ContactUS>
     </div>
   );
 };

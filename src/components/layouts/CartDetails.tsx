@@ -47,7 +47,7 @@ const CartDetails = ({ product }: any) => {
         </button>
       </div>
       <button
-        onClick={(e) => handleRemove(e, product.id)}
+        onClick={(e) => handleRemove(e, product._id)}
         className="bg-red-600 text-white p-2 rounded-full hover:bg-red-700"
       >
         <Trash2 size={18} />

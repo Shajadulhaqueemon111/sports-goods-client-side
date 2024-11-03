@@ -5,22 +5,8 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/fetaure/cartSlice";
 import { Link } from "react-router-dom";
 
-// Define the Product type
-// interface Product {
-//   id: string;
-//   name: string;
-//   description: string;
-//   price: string;
-//   image: string;
-//   category: string;
-//   brand: string;
-//   stock_quantity: string;
-// }
-
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const ProductCard = ({ product }: { product: any }) => {
-  // console.log(product); // Check data
-
   const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<any>(null);
@@ -54,7 +40,7 @@ const ProductCard = ({ product }: { product: any }) => {
         className="border rounded-lg shadow-lg overflow-hidden bg-black transition-transform transform hover:scale-105 hover:shadow-2xl flex flex-col h-full"
       >
         <img
-          src={product.image}
+          src={product?.image}
           alt={product.name}
           className="w-full h-48 object-cover transition-opacity duration-300 hover:opacity-75"
         />
@@ -64,7 +50,7 @@ const ProductCard = ({ product }: { product: any }) => {
           </h3>
           <p className="text-gray-300 mb-4 flex-grow">{product.description}</p>
           <p className="text-lg font-bold text-white mb-4">${product.price}</p>
-          <Link to={`/view-details/${product.id}`}>
+          <Link to={`/view-details/${product._id}`}>
             <button className="bg-white text-black font-semibold py-2 px-4 rounded-lg hover:bg-gray-800 hover:text-white transition duration-300 shadow-md hover:shadow-lg">
               View-Details
             </button>

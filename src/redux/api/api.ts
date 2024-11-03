@@ -13,12 +13,27 @@ export const baseApi = createApi({
       }),
       providesTags: ["products"],
     }),
+    postProducts: builder.query({
+      query: (data) => ({
+        method: "POST",
+        url: "/single/create-product",
+        body: data,
+      }),
+      providesTags: ["products"],
+    }),
     getProductById: builder.query({
-      query: (id) => ({
+      query: (_id) => ({
         method: "GET",
-        url: `/single/get-product/${id}`,
+        url: `/single/get-product/${_id}`,
       }),
 
+      providesTags: ["products"],
+    }),
+    getProductsByCategory: builder.query({
+      query: (category) => ({
+        method: "GET",
+        url: `/single/get-product?category=${category}`,
+      }),
       providesTags: ["products"],
     }),
     getAboutdata: builder.query({
@@ -46,4 +61,6 @@ export const {
   useCreteOrderMutation,
   useGetProductByIdQuery,
   useGetAboutdataQuery,
+  useLazyPostProductsQuery,
+  useGetProductsByCategoryQuery,
 } = baseApi;
