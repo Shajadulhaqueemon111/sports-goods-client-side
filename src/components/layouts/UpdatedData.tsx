@@ -1,10 +1,9 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useState } from "react";
-import { useLazyPostProductsQuery } from "../../redux/api/api";
+import { useUpdateProductByIdMutation } from "../../redux/api/api";
 import toast from "react-hot-toast";
 
 interface Product {
-  id: string;
   brand: string;
   category: string;
   description: string;
@@ -15,9 +14,12 @@ interface Product {
   stock_quantity: string;
 }
 
-const ManageProduct = () => {
+interface UpdatedDataProps {
+  productId: string; // Accept productId as a prop
+}
+
+const UpdatedData: React.FC<UpdatedDataProps> = ({ productId }) => {
   const [productData, setProductData] = useState<Product>({
-    id: "",
     brand: "",
     category: "",
     description: "",
@@ -28,7 +30,8 @@ const ManageProduct = () => {
     stock_quantity: "",
   });
 
-  const [postProducts, { isLoading, isError }] = useLazyPostProductsQuery();
+  const [UpdateProductById, { isLoading, isError }] =
+    useUpdateProductByIdMutation();
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -40,27 +43,19 @@ const ManageProduct = () => {
     }));
   };
 
-  const handleToCreateProduct = async (e: React.FormEvent) => {
+  const handleToUpdateProduct = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const data = {
-        single_product: {
-          ...productData,
-        },
-      };
-      console.log(data);
-      // Trigger the mutation with the wrapped product data
-      const response = await postProducts(data).unwrap();
-      toast.success("Product created successfully !");
-      console.log("Product created successfully:", response);
-      if (response.single_product) {
-        console.log("Product created successfully:");
-      } else {
-        console.log("Product ID:", response.data._id);
-      }
+      // Pass the productId along with the updated data
+      const response = await UpdateProductById({
+        productId, // Ensure this is defined
+        single_data: productData,
+      }).unwrap();
+
+      toast.success("Product Updated successfully!");
+      console.log("Product updated successfully:", response);
 
       setProductData({
-        id: " ",
         brand: "",
         category: "",
         description: "",
@@ -71,17 +66,17 @@ const ManageProduct = () => {
         stock_quantity: "",
       });
     } catch (error) {
-      console.error("Failed to create product:", error);
+      toast.error("Product Update Failed!");
+      console.error("Error updating product:", error);
     }
   };
 
   return (
     <div>
       <div className="bg-[#F4F3F0] p-24 w-full">
-        <h2 className="text-3xl font-bold">Manage Product</h2>
+        <h2 className="text-3xl font-bold">Updated Product</h2>
 
-        <form onSubmit={handleToCreateProduct}>
-          {/* Name Field */}
+        <form onSubmit={handleToUpdateProduct}>
           <div className="form-control">
             <label className="label">
               <span className="label-text">Product Name</span>
@@ -96,12 +91,10 @@ const ManageProduct = () => {
             />
           </div>
 
-          {/* Category Field */}
           <div className="form-control mb-4 gap-4">
             <label className="label">
               <span className="label-text">Category</span>
             </label>
-
             <select
               name="category"
               value={productData.category}
@@ -131,7 +124,6 @@ const ManageProduct = () => {
             />
           </div>
 
-          {/* Description Field */}
           <div className="form-control">
             <label className="label">
               <span className="label-text">Description</span>
@@ -146,7 +138,6 @@ const ManageProduct = () => {
             />
           </div>
 
-          {/* Price Field */}
           <div className="form-control">
             <label className="label">
               <span className="label-text">Price</span>
@@ -161,7 +152,6 @@ const ManageProduct = () => {
             />
           </div>
 
-          {/* Stock Quantity Field */}
           <div className="form-control">
             <label className="label">
               <span className="label-text">Stock Quantity</span>
@@ -176,7 +166,6 @@ const ManageProduct = () => {
             />
           </div>
 
-          {/* Rating Field */}
           <div className="form-control">
             <label className="label">
               <span className="label-text">Rating</span>
@@ -191,7 +180,6 @@ const ManageProduct = () => {
             />
           </div>
 
-          {/* Image URL Field */}
           <div className="form-control">
             <label className="label">
               <span className="label-text">Image URL</span>
@@ -207,10 +195,10 @@ const ManageProduct = () => {
           </div>
 
           <button type="submit" className="btn mt-4 btn-block bg-[#D2B48C]">
-            {isLoading ? "Saving..." : "Save Product"}
+            {isLoading ? "Updating..." : "Update Product"}
           </button>
           {isError && (
-            <div className="text-red-500">Failed to create product.</div>
+            <div className="text-red-500">Error updating product</div>
           )}
         </form>
       </div>
@@ -218,4 +206,4 @@ const ManageProduct = () => {
   );
 };
 
-export default ManageProduct;
+export default UpdatedData;

@@ -19,11 +19,9 @@ const AllProducts = () => {
   const products = data?.data || [];
 
   const filteredProducts = products.filter(
-    (product: { single_product: { category: string | null; name: string } }) =>
-      product.single_product.category === category &&
-      product.single_product.name
-        .toLowerCase()
-        .includes(searchQuery.toLowerCase())
+    (product: { category: string | null; name: string }) =>
+      product.category === category &&
+      product.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   return (
@@ -45,14 +43,9 @@ const AllProducts = () => {
 
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10">
         {filteredProducts.length > 0 ? (
-          filteredProducts.map((item: any) => {
-            const flatProduct = {
-              ...item.single_product,
-              id: item.id,
-              _id: item._id,
-            };
-            return <ProductCard key={flatProduct._id} product={flatProduct} />;
-          })
+          filteredProducts.map((item: any) => (
+            <ProductCard key={item._id} product={item} />
+          ))
         ) : (
           <p>No products found for this category or search query.</p>
         )}

@@ -30,7 +30,7 @@ const Categories = () => {
         {categories.map((category) => (
           <Link
             key={category}
-            to={`/all-product?category=${encodeURIComponent(category)}`} // Redirect to AllProducts with the selected category
+            to={`/all-product?category=${category}`} // Redirect to AllProducts with the selected category
             className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
           >
             {category}

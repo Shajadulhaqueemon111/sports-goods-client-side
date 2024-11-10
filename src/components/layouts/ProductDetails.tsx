@@ -19,7 +19,7 @@ const ProductDetails = () => {
   const { data, isLoading, error } = useGetProductByIdQuery(_id || "");
 
   // Access the single_product data within the nested structure
-  const product = data?.data?.single_product;
+  const product = data?.data;
 
   useEffect(() => {
     console.log("Fetched product:", product);

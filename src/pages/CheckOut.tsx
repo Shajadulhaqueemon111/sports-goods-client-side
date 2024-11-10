@@ -8,8 +8,8 @@ export default function CheckOutPage() {
   const [createOrder] = useCreteOrderMutation();
   // State for user input
   const [user, setUser] = useState({
-    name: "Fahim Ahammed",
-    email: "fahim@ph.com",
+    name: "MD Sajedul Haque Emon",
+    email: "emon@gmail.com",
     phone: "0123456789",
     address: "Dhaka, Bangladesh",
   });
@@ -17,29 +17,31 @@ export default function CheckOutPage() {
   // Replace this with actual selector from your Redux store // Replace with your Redux selector
   const cartItems = useAppSelector((store) => store.cart.products);
   // Handle input changes
-
+  console.log(cartItems);
   const handleChange = (e: any) => {
     setUser({
       ...user,
       [e.target.name]: e.target.value,
     });
   };
-
+  console.log(handleChange);
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     const data = {
       user,
 
       products: cartItems.map((item: any) => ({
-        product: item.id,
+        product: item._id,
         quantity: item.stock_quantity,
       })),
     };
+    console.log(data);
+    console.log(handleSubmit);
     try {
       const res = await createOrder(data).unwrap();
       if (res.success) {
         console.log(res);
-        window.location.href = res.data.payment_url;
+        console.log((window.location.href = res.data.payment_url));
       } else {
         console.error("Order creation failed:", res.message);
       }

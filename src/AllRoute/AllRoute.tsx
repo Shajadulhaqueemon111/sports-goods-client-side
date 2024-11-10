@@ -9,6 +9,7 @@ import CheckOutPage from "../pages/CheckOut";
 import Aboute from "../components/layouts/Aboute";
 import AllProduct from "../components/layouts/AllProduct";
 import ManageProduct from "../components/layouts/ManageProduct";
+import UpdatedData from "../components/layouts/UpdatedData";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
       {
         path: "/manage-product",
         element: <ManageProduct></ManageProduct>,
+      },
+      {
+        path: "/updated/single_product/:id",
+        element: <UpdatedData></UpdatedData>,
       },
     ],
   },

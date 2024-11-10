@@ -29,6 +29,22 @@ export const baseApi = createApi({
 
       providesTags: ["products"],
     }),
+    DeleteProductById: builder.mutation({
+      query: (_id) => ({
+        url: `/single/delete-product/${_id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["products"], // Invalidate the "products" tag to refetch the product list if needed
+    }),
+    UpdateProductById: builder.mutation({
+      query: ({ _id, updatedData }) => ({
+        url: `/single/update-product/${_id}`,
+        method: "PUT",
+        body: updatedData,
+      }),
+      invalidatesTags: ["products"],
+    }),
+
     getProductsByCategory: builder.query({
       query: (category) => ({
         method: "GET",
@@ -63,4 +79,6 @@ export const {
   useGetAboutdataQuery,
   useLazyPostProductsQuery,
   useGetProductsByCategoryQuery,
+  useDeleteProductByIdMutation,
+  useUpdateProductByIdMutation,
 } = baseApi;

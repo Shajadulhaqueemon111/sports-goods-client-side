@@ -35,7 +35,7 @@ const OrderSummary = () => {
             </td>
           </tr>
           <tr>
-            <td className="text-dark">Tax ({taxRate * 100}%):</td>
+            <td className="text-dark">Tax ({taxRate * 150}%):</td>
             <td className="text-dark text-right font-semibold">
               ${tax.toFixed(3)}
             </td>
