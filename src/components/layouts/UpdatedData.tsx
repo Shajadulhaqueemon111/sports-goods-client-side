@@ -1,9 +1,10 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useState } from "react";
 import { useUpdateProductByIdMutation } from "../../redux/api/api";
 import toast from "react-hot-toast";
+import { useParams } from "react-router-dom";
 
 interface Product {
+  _id?: string;
   brand: string;
   category: string;
   description: string;
@@ -14,12 +15,11 @@ interface Product {
   stock_quantity: string;
 }
 
-interface UpdatedDataProps {
-  productId: string; // Accept productId as a prop
-}
+const UpdatedData = () => {
+  const { _id } = useParams();
 
-const UpdatedData: React.FC<UpdatedDataProps> = ({ productId }) => {
   const [productData, setProductData] = useState<Product>({
+    _id,
     brand: "",
     category: "",
     description: "",
@@ -45,17 +45,18 @@ const UpdatedData: React.FC<UpdatedDataProps> = ({ productId }) => {
 
   const handleToUpdateProduct = async (e: React.FormEvent) => {
     e.preventDefault();
+    console.log(productData);
     try {
-      // Pass the productId along with the updated data
       const response = await UpdateProductById({
-        productId, // Ensure this is defined
-        single_data: productData,
+        _id: productData._id,
+        single_product: productData,
       }).unwrap();
 
       toast.success("Product Updated successfully!");
       console.log("Product updated successfully:", response);
 
       setProductData({
+        _id,
         brand: "",
         category: "",
         description: "",

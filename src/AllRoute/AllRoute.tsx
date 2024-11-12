@@ -46,7 +46,7 @@ const router = createBrowserRouter([
         element: <ManageProduct></ManageProduct>,
       },
       {
-        path: "/updated/single_product/:id",
+        path: "/updated/single_product/:_id",
         element: <UpdatedData></UpdatedData>,
       },
     ],

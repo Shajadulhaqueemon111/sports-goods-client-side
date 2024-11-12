@@ -49,7 +49,7 @@ const ManageProduct = () => {
         },
       };
       console.log(data);
-      // Trigger the mutation with the wrapped product data
+
       const response = await postProducts(data).unwrap();
       toast.success("Product created successfully !");
       console.log("Product created successfully:", response);

@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const baseApi = createApi({
   reducerPath: "baseApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://localhost:5000/api/v1",
+    baseUrl: "https://sport-sever-side.vercel.app/api/v1",
   }),
   tagTypes: ["products", "verify", "Aboutes"],
   endpoints: (builder) => ({
@@ -34,15 +34,15 @@ export const baseApi = createApi({
         url: `/single/delete-product/${_id}`,
         method: "DELETE",
       }),
-      invalidatesTags: ["products"], // Invalidate the "products" tag to refetch the product list if needed
-    }),
-    UpdateProductById: builder.mutation({
-      query: ({ _id, updatedData }) => ({
-        url: `/single/update-product/${_id}`,
-        method: "PUT",
-        body: updatedData,
-      }),
       invalidatesTags: ["products"],
+    }),
+
+    UpdateProductById: builder.mutation({
+      query: ({ _id, single_product }) => ({
+        url: `/single/update-product/${_id}`,
+        method: "PATCH",
+        body: { single_product },
+      }),
     }),
 
     getProductsByCategory: builder.query({
