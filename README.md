@@ -1,30 +1,5 @@
-# React + TypeScript + Vite
+# WEBSITE-DETAILS AND FETAURES:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+In my sports relay website, I first added the navbar in the navbar and added four sections in the company relay. There is a banner section. Are there sports related slides used? Users can slide them if they want. Parvati All Product Seksan will see all these products in card form. If the user wants to delete the card, can edit it and can see the details of the card by clicking on ViewDetails button and if that car quantity is not zero then add to card and click on proceed to check out button and make payment.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+# Vedio Recoder: https://drive.google.com/file/d/1aak5RZcMqg-wiswCC8tAgSwlSQ6ninNx/view?usp=sharing
